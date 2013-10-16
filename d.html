@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script language="javascript">
+  $(document).ready(function() {
+    theWidth = $(".imagePanel img").css('width');
+    $(".imagePanel").css('width',theWidth);
+});
+
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#homepage')){
+        e.preventDefault();
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
+
+</script>
+
+	<style>
+	* {
+		width:100%;
+	    margin:auto;
+		padding-left:0px;
+		padding-right:0px;
+		margin: 0;
+		border: none;
+		list-style-type: none;
+		font-size: large;
+	}
+	
+	.accordion {
+		width:100%;
+		padding-left:0px;
+		padding-right:0px;
+		margin:auto;
+	    border:1px solid #ccc;
+		height:auto;
+		text-align:justify;
+		/*text-wrap:unrestricted;*/
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:large;
+		/* background-color:#FFF;	*/
+	
+	}
+	
+	.accordion2 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:x-large;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+		/*text-wrap:suppress;*/
+	}
+	
+	.accordion3 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:x-large;
+		background-color:#FFF;
+		color:#FFF;
+		text-shadow:#666;
+	}
+	
+	
+	.imagePanel {
+    	margin: auto;
+		width:65%;
+	}
+	.imagePanel img { 
+	} 
+	.imagePanel p {
+	}    
+	.imagepanel a {
+		word-break:break-all;
+		
+	}
+	
+	.imagePanel2 {
+    	margin: auto;
+		width:100%;
+	}
+	.imagePanel2 img { 
+	} 
+	.imagePanel2 p {
+	}    
+	.imagepanel2 a {
+		
+		word-break:break-all;
+		
+	}
+	
+	.accordion .acc-content {
+		margin:auto;
+	    height: 0;
+	    overflow: hidden;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:large;
+		padding-left:5px;
+		padding-right:5px;
+		width:95%;
+		word-wrap:break-word;
+	}
+	
+	.accordion .acc-content2 {
+		margin:auto;
+		width:95%;
+		text-align:left;
+		display: block;
+		padding-top:1px;
+		padding-bottom:1px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#000;
+		font-weight: normal;
+		font-size: large;
+	}
+	
+	.linkers a
+	{
+		text-align:left;
+		color:#000;
+		font-weight:normal;
+		font-size: large;
+		text-decoration:underline;
+	}
+
+	
+	
+	.accordion li:target .acc-content {
+		margin:auto;
+	    height: auto;
+	    padding:0px;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:large;
+		background-color:#FFF;
+		padding-left:5px;
+		padding-right:5px;
+		text-wrap:unrestricted;
+
+	}
+	.accordion .acc-header a {
+		width:100%;
+		text-align:left;
+		display: block;
+		padding-top:3px;
+		padding-bottom:3px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#CCC;
+		/*text-shadow: 1px 1px 1px #000;*/
+		font-weight: bold;
+		font-size: large;
+		border-bottom: 1px solid #aaa;
+		background:#000;
+		text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:large;
+		text-indent:10px;
+	}
+	
+	.accordion .acc-header2 a {
+		width:100%;
+		text-align:left;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#000;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size: large;
+	border-bottom: 1px solid #aaa;
+	background:#fbb040;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header2 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:large;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header3 a {
+		width:100%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	text-shadow: 1px 1px 1px #000;
+	font-weight: bold;
+	font-size: large;
+	border-bottom: 1px solid #aaa;
+	background:#600;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header3 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:large;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header4 a {
+		width:100%;
+		text-align:left
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration:underline;
+	color:#000;
+	
+	font-weight:normal;
+	font-size: large;
+	
+	/*text-indent:10px;*/
+	
+	}
+.accordion .acc-header5 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:larger;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header5 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:larger;
+		text-indent:10px;
+	}	
+	body {
+	background-color: #FFF;
+}
+	</style>
+
+  </head>
+  <body id="homepage">
+  <div class="accordion2" id="sancharfirstlogo"><a href="index.html"><img src="assets/images/edusancharlogo_or_hor.jpg" width="349" alt="sancharFirst Logo"></a></div>
+  
+  <div class="accordion">
+    	<ul>
+        
+        	<li class="acc-header5" id="alpha"> 
+	        <a href="index.html">व्याख्या, संकल्पना, उपपत्ती -<br>
+	        माध्यम आणि पत्रकारिता अभ्यास</a>
+            </li>
+            
+			
+			<li class="acc-header" id="demog"> 
+		        <a href="#demog">(Demographics) डेमोग्राफिक्स</a>
+		        <div class="acc-content">
+		          <p><strong>डेमोग्राफिक्स</strong></p>
+		          <p>कामाचे स्वरूप, वय, लिंग, प्रदेश यासारख्या निकषांच्या आधारे एखाद्या व्यक्ती समूहाचे मूल्यमापन करणे. </p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			
+			
+			<li class="acc-header2" id="denot"> 
+		        <a href="#denot">(Denote/denotation) डिनोट/डिनोटेशनडेमोग्राफिक्स</a>
+		        <div class="acc-content">
+		          <p><strong>डिनोट/डिनोटेशन</strong></p>
+		          <p>एखाद्या चिन्हाचा असा गुण ज्याने वाचकाला त्याचा अर्थ लगेच कळेल आणि ज्याचा संबंध त्याच्या वास्तवाशी त्याला लगेच जोडता येईल. </p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			<li class="acc-header" id="dialectics"> 
+		        <a href="#dialectics">(Dialectics) डायलेक्टिक्स</a>
+		        <div class="acc-content"><p><strong>डायलेक्टिक्स</strong></p>
+		          <p>बदलाची प्रक्रिया दाखवणारा मार्क्सवादातील एक संकल्पना. विरोधी विचारधारांतील संघर्षांतून समन्वय निर्माण होतो असे ही संकल्पना आहे. या संकल्पनेचा उपयोग सोव्हिएत चित्रपटात विरोधी विचारधारांतील संघर्ष दर्शविण्यासाठी केला गेला. यासाठी विरोधी सीक्वेंस एकापाठोपाठ दाखविले जातात. अशा दृश्य मांडणीला डायलेक्टिकल मोंटाज (dialectical montage) असे म्हणतात. </p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			<li class="acc-header2" id="diasp"> 
+		        <a href="#diasp">(Diaspora) डायस्पोरा</a>
+		        <div class="acc-content"><p><strong>डायस्पोरा</strong></p>
+		          <p>एकाच भौगोलिक प्रदेशातून जगभरात पसरलेल्या लोकांना त्या त्या प्रदेशातील डायस्पोरा म्हणतात. उदाहरणार्थ भारतातील लोक अनेक शतकांपासून जगभरात पसरलेले आहेत. या सगळ्या लोकांचा एक भारतीय डायस्पोरा आहे.</p>
+		          <p>&nbsp; </p>
+				</div>
+		    </li>
+			
+			
+			
+			<li class="acc-header" id="dieg"> 
+		        <a href="#dieg">(Diegesis) डायजेसिसडायस्पोरा</a>
+		        <div class="acc-content">
+		          <p><strong>डायजेसिस</strong></p>
+		          <p>दृक्श्राव्य कथनातून जे जग निर्माण केलं जातं त्या जगाचे वेळ आणि अवकाश यांना डायजेसिस असे म्हणतात. चित्रपटातील वेळ आणि अवकाश हे वास्तवातील वेळ आणि अवकाशापेक्षा वेगळे असतात. डायजेसिस ही संकल्पना आवाजाच्या बाबतीत उपयोगी असते. काही वेळा कथेला स्वतंत्र आवाज निर्माण करावे लागतात तर काही वेळा ज्या काळात आणि अवकाशात कथा घडताना दाखविली जाते आहे त्यातील प्रत्यक्ष आवाज वापरले तर चित्रपट अधिक खरा वाटतो. </p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			
+			<li class="acc-header2" id="diffpr"> 
+		        <a href="#diffpr">(Differential pricing) डिफरेंशियल प्रायसिंग</a>
+		        <div class="acc-content">
+		          <p><strong>डिफरेंशियल प्रायसिंग </strong></p>
+		          <p>वस्तूची किंमत ठरवण्याची एक पद्धत. विविध बाजारांत विकत घेण्याच्या विविध क्षमता असणारे ग्राहक असतात. डिफरेंशियल प्रायसिंग करताना वेगळ्या वगळ्या बाजारात आणि ग्राहकांच्या विकत घेण्याच्या क्षमतेवर त्याच वस्तूची वेगळी वेगळी किंमत ठरवली जाते. काही वर्षांपूर्वी वर्तमानपत्रांत जर जाहिरात द्यायची असेल तर विशिष्ट जागेसाठी आणि आकारासाठी विशिष्ट किंमत असायची. आता मात्र या व्यतिरिक्त ते ते वर्तमानपत्र आणि त्या वर्थमानपत्रातील विशिष्ट पान कुठल्या वाचकांसाठी आहे हे लक्षात घेऊन त्या त्या पानावरील जाहिरातीची किंमत ठरवली जाते. </p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			
+			<li class="acc-header" id="docudr"> 
+		        <a href="#docudr">(Docu-drama) डॉक्युड्रामा</a>
+		        <div class="acc-content">
+		          <p><strong>डॉक्युड्रामा</strong></p>
+		          <p>एखाद्या काल्पनिक कथनाची मांडणी जेव्हा बोधप
+		            टाच्या/लघुपटाच्या (documentary)  पद्धतीने केली जाते तेव्हा त्या मांडणीला डॉक्युड्रामा म्हणतात.</p>
+		          <p>&nbsp; </p>
+				</div>
+		    </li>
+			
+			
+			<li class="acc-header2" id="dramadocu"> 
+		        <a href="#dramadocu">(Drama-documentary) ड्रामा डॉक्युमेंटरी</a>
+		        <div class="acc-content">
+		          <p><strong>ड्रामा डॉक्युमेंटरी</strong></p>
+		          <p>जेव्हा एखादा बोधपट एखाद्या चित्रपटाप्रमाणे मांडला जातो तेव्हा तशा मांडणीला ड्रामा डॉक्युमेंटरी म्हणतात. यालाच ड्रामा-डॉक (drama-doc) असेही म्हणतात.</p>
+		          <p>&nbsp; </p>
+				</div>
+		    </li>
+			
+			
+			<li class="acc-header" id="duopoly"> 
+		        <a href="#duopoly">(Duopoly) डुओपॉली</a>
+		        <div class="acc-content">
+		          <p><strong>डुओपॉली</strong></p>
+		          <p>असा उद्योग जेथे दोन कंपन्या सगळ्या बाजारावर नियंत्रण 
+		            
+		            ठेवतात. </p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+            
+			<li class="acc-header2" id="dfame"> 
+		        <a href="#dfame">(Defamation) डेफमेशनसायबरस्पेस</a>
+		        <div class="acc-content">
+		          <p><strong>बदनामी करणे</strong></p>
+		          <p>एखाद्याच्या लौकिकाला इजा पोहोचेल अशाप्रकारचे जाहीर वक्तव्य केल्यास त्या वक्तव्याला बदनामी करणे असे म्हणतात. बदनामी, मानहानी करणे, बेअब्रू करणे म्हणजे डेफमेशन. भारतीय दंड संहितेतील कलम 499 नुसार बदनामी करणे हा दंडनीय गुन्हा आहे.</p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			
+			<li class="acc-header" id="digitisation"> 
+		        <a href="#digitisation">(Digitisation) डिजिटायझेशन</a>
+		        <div class="acc-content"><p><strong>डिजिटायझेशन</strong></p>
+		          <p>पत्रकारितेचे स्वरूप संपूर्णपणे बदलून टाकणारे हे तंत्रज्ञान आहे. शब्द, स्वर आणि आकृत्या तयार करणे आणि प्रसारित करणे या तंत्रज्ञानामुळे पत्रकारिता वाढली. परंतू अंकात्मक तंत्रज्ञान (digital technology) आले आणि पत्रकारांच्या कामाचे स्वरूप बदलले, कामगार संघटना संपल्या, पत्रकारांना त्यांच्या कामावर अधिक नियंत्रण ठेवता आले आणि माहिती महाजाल या नव प्रकाशन माध्यमाचा उदय झाला ज्यामुळे माध्यमांची एककेंद्राभिमुखता वाढली. 
+		            अंकात्मक तंत्राज्ञानामुळे ज्ञान हे अंकांच्या प्रवाहात रूपांतरित झाले. </p>
+		          <p>&nbsp;</p>
+		          <p>1960च्या दशकात अमेरिकेतील वर्तमानपत्रे संगणक वापरायला लागली होती. युरोप आणि ब्रिटनमधे हे तंत्रज्ञान ऐंशीच्या दशकात आले. हॉट मेटल छपाईचे तंत्रज्ञान मागे पडू लागले. पत्रकार आता स्वत: बातम्या लिहून, संपादित करून, पानं लावून वर्तमानपत्रांची डमी काढत होते. रुपर्ट मरडॉकने 1986 साली त्याच्या न्यूज इंटरनॅशनलचे कार्यालय मध्य लंडनमधून डॉकलॅंड्स येथे वॅपिंगला हलवले. एकाच वेळेस दोन वर्तमानपत्र आपल्या छापखान्यातल्या एकाही कर्मचार्‍याविना, रेल्वेचा वापर केल्याविना आणि केवळ एक पंचमांश कर्मचार्‍यांचा उपयोग करून काढून दाखवले. </p>
+		          <p>&nbsp;</p>
+		          <p>विविध प्रकारचे सॉफ्टवेअर वापरून वर्तमानपत्र तयार करण्याची प्रक्रिया अधिकाधिक सुलभ, लवचिक आणि जलद होत गेली. 
+		            दृक्श्राव्य माध्यमांना अंकात्मक तंत्रज्ञानामुळे दोन फायदे झाले. कामाचे स्वरूप बदलले आणि प्रसारणाच्या कक्षा रुंदावल्या. ध्वनिमुद्रण, पार्श्वसंगीत आणि थेट पडद्यावरील दृक्श्राव्य  संपादानात अंकात्मक तंत्रज्ञानाने आमूलाग्र बदल घडवून आणला ज्याचा परिणाम दृक्श्राव्य माध्यमांवर पडला.  या नव्या तंत्राज्ञानामुळे पत्रकार स्वत: कॅमेरा वापरून, संपादन करून, पार्श्वसंगीत देऊन संपूर्ण पॅकेज तयार करायला शिकले. यामुळे बातमीवर त्यांचे नियंत्रण वाढले. </p>
+		          <p>&nbsp;</p>
+		          <p>अंकात्मक तंत्रज्ञान आले आणि एकाच केंद्रावरून अनेक चॅनलवरती प्रसारण करणे शक्य झाले. तोपर्यंत ऍनालॉग पद्धतीने प्रसारण करण्यात यायचे आणि एकास एक अशी प्रसारण यंत्रणा होती.  आज आपल्या टी व्हीवर किंवा रेडिओवर जे अनेक चॅनेल आपल्याला सापडतात ते सगळे अंकात्मक तंत्रज्ञानामुळे शक्य झाले आहे.</p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			<li class="acc-header2" id="dcourse"> 
+		        <a href="#dcourse">(Discourse) डिस्कोर्स</a>
+		        <div class="acc-content">
+		          <p><strong>संभाषण</strong></p>
+		          <p>संभाषण कशाला म्हणावे आणि त्याचा अभ्यास कसा करावा याबाबत अभ्यासकात एकमत नाही. याचे कारण असे की मानवी संभाषण अनेक पातळींवर होत असते. त्यात वापरलेली चिन्हे आणि त्या चिन्हांना प्राप्त झालेले अर्थ हेही वेगवेगळे  असतात. त्याचबरोबर तंत्रज्ञानाचा विकास झाला. त्याचा संभाषणात वापर वाढत   गेला आणि संभाषणाच्या कक्षा रुंदावल्या. संभाषणाचे विश्लेषण आणि संशोधन याची आवश्यकता भासली कारण भाषांचा, त्यातील दृक्श्राव्य चिन्हांचा उपयोग ज्याप्रकारे पारंपरिक समाजात केला जात असे तसा तो औद्योगिक समाजात केला जात नव्हता. याला माध्यम साधनातील वाढ जबाबदार होती. </p>
+		          <p>&nbsp;</p>
+		          <p>अर्थ तयार करणे आणि अर्थाचे पुनर्निर्माण करण्याच्या सामाजिक प्रक्रियेला संभाषण म्हणतात. संभाषणाच्या अभ्यासाच्या आणि संशोधनाच्या अनेक पद्धती आहेत. उदाहरणार्थ भाषा ही संभाषण व्यवस्थेतील एक व्यवस्था म्हटली तर भाषेकडे स्वतंत्र व्यवस्था म्हणून पाहावे लागेल. मग भाषेचा आकार, संघटना यांचा अभ्यास करता येईल. शब्द आणि वाक्यांपेक्षा एकंदर भाषा कशी वापरली जाते आहे याचा अभ्यास शक्य होईल आणि मग भाषांमधे रचनांचा शोध घेऊन त्याचा अभ्यास करता येईल. येथे संभाषणाचा आकार किंवा फॉर्म पाहिला जातो त्यामुळे याप्रकारच्या दृष्टिकोनाला फॉर्मलिझम म्हणतात. या अभ्यासात संभाषणातील संहिता कुठली हा निर्णय भाषेच्या आकारावर ठरतो. 
+		            भाषेचा एक पैलू कार्यात्मक असतो. </p>
+		          <p>&nbsp;</p>
+		          <p>भाषा ही काहीतरी अर्थ पोहोचवण्यासाठी असते, भाषेचा   काहीतरी उपयोग असतो आणि या दोन्ही कार्यांचा संभाषणाच्या संदर्भाशी संबंध असतो.  याचा अर्थ संभाषण संशोधनात केवळ वाक्यांचा आणि शब्दांचा अर्थ समजणे पुरेसे नाही तर त्यांचा एकमेकांशी संबंध आणि एकत्र संदर्भही समजणे आवश्यक असते. एखादी बातमी, प्रसिद्धी पत्रक किंवा जाहिरात यात संभाषण असते. हे संभाषण समजून घ्यायचे असेल तर संभाषणकर्ता संभाषणाद्वारे नेमकं काय करतो आहे हे जाणून घेणे आवश्यक आहे. त्याचप्रमाणे संभाषकर्त्याचं आणि त्याने वापरलेल्या भाषिक चिन्हांचा काय संबंध आहे हेही समजलं पाहिजे. या संशोधन पद्धतीला टीकात्मक संभाषण विश्लेषण (Critical Discourse Analysis) पद्धती म्हणतात. 
+		            तिसरी संशोधन पद्धती मायकल फूको याने तयार केली. </p>
+		          <p>&nbsp;</p>
+		          <p>या पद्धतीत संभाषणात वापरण्यात येणार्‍या भाषेतून समाज व्यवस्था, ज्ञानाचा प्रसार व ज्ञानाच्या साधनांवर असलेले नियंत्रण, समाजातील सत्ताकेंद्रे व समाज यांच्यातील नाते या सर्व बाबींकडे पाहता येऊ शकते. अशा पद्धतीने विचार केल्यास संभाषण अभ्यासाचे स्वतंत्र पैलू तयार होतात. उदाहरणार्थ वैद्यकीय संभाषण, कायद्यातील संभाषण, राजकीय संभाषण.  या सगळ्यांचे सामाजिक, राजनैतिक आणि संस्थांतर्गत संदर्भ त्या त्या संभाषणात वापरण्यात येणार्‍या भाषेतून पडताळता येतील असे फूको सांगतो.		            </p>
+		          <p>&nbsp;</p>
+		          <p><strong>अधिक माहितीसाठी वाचा:		            </strong></p>
+		          <p>Barthes, Roland (1967), Elements of Semiology. New York: Hill and Wang 
+		            Brown Gillian, Yule George (1983),Discourse analysis, Cambridge University Press.		            </p>
+		          <p>Coulthard, Malcolm (1992) Advances in Spoken Discourse Analysis, Routledge		            </p>
+		          <p>Foucault, Michel (2003), Society Must be Defended. (Trans. David Macey). </p>
+		          <p>Bertani, Mauro & Fontana, Alessandro (eds.). </p>
+		          <p>Picador, NY.
+		            Sturrock, John, Rabaté, Jean-Michel (2003), Structuralism, Wiley-Blackwell.</p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			<li class="acc-header" id="docu"> 
+		        <a href="#docu">(Documentary) डॉक्युमेंटरी</a>
+		        <div class="acc-content">
+		          <p><strong>डॉक्युमेंटरी: अनुबोधपट</strong></p>
+		          <p>1926 साली जॉन ग्रियरसनने पहिल्यांदा या शब्दाचा वापर केला. ग्रियरसननुसार अनुबोधपट म्हणजे वास्तवाची सृजनात्मक मांडणी. मात्र याला एक विरोधी विचारही आहे. कुठल्याही वास्तवाची सृजनात्मक मांडणी केली तर त्यात वास्तव कितीसे उरेल? हे जरी खरी असले तरी अनुबोधपटांमधे वास्तवाचे अंश प्रकर्षाने असतात हे नाकारता येत नाही. 
+		            ग्रियरसनने अनुबोधपोटांची काही तत्त्वे सांगितली. चित्रपट वास्तव 'उभारतात' तर अनुबोधपट वास्तव 'मांडतात'. त्यामुळे अनुबोधपट हे प्रत्यक्ष जगात, वास्तवात केंद्रित असतात. अनुबोधपटात प्रसंग आणि व्यक्ती असतात तसे दिसतात. त्यांचे 'उत्पादन' केले जात नाही. अनुबोधपटातील नाट्य वास्तव असतं आणि अधिक आकर्षक आणि सत्याची कास धरणारं असतं.		            </p>
+		          <p>&nbsp;</p>
+		          <p><strong>अधिक माहितीसाठी वाचा:		            </strong></p>
+		          <p>Corner, John (1996) - The Art of Record: A critical introduction to documentary. Manchester University Press. 
+		            Macdonald and Cousins, Imagining Reality: the Faber Book of Documentary, 1996.</p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			<li class="acc-header2" id="dumb"> 
+		        <a href="#dumb">(Dumbing Down) डम्बिंग डाउनडॉक्युमेंटरी</a>
+		        <div class="acc-content"><p><strong>डम्बिंग डाउनडॉक्युमेंटरी</strong></p>
+		          <p>बातमीच्या मांडणीत जाणून बुजून ती निष्प्रभ, निस्तेज करण्याला डम्बिंग डाउन म्हणतात. याचे दुसरे टोक म्हणजे बातमीच्या मांडणीत संवेदनता (Sensationalism) वाढवून वाचकांना आकर्षित करणे. बातमीची मांडणी, जागा, लांबी, वापरलेली भाषा या सगळ्या गोष्टी वापरून बातमी निस्तेज करता येते. बातमी तर द्यायची आहे मात्र त्या बातमीकडे फार लक्ष जाणार नाही असे पाहायचे असेल तर अशा प्रकारच्या मांडणीचा उपयोग केला जातो. असे करण्यामागे राजकीय, सामाजिक, आर्थिक, व्यावसायिक दबाव असू शकतो.    </p>
+		          <p>&nbsp;</p>
+		          <p><strong>अधिक माहितीसाठी वाचा:		            </strong></p>
+		          <p>Clarke, Nick (2003), The Shadow of a Nation: The Changing Face of Britain, Orion Publishing Group.		            </p>
+		          <p>Mosley, Ivo (2000), Dumbing down: Culture, politics and the mass media, Imprint Academic </p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+            <li class="acc-header5" id="alpha"> 
+	        <a href="index.html">मुख्य पानावर परत</a>
+            </li>
+            
+            
+		</ul>
+	</div>
+   
+  </body>
+</html>

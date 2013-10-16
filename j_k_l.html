@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script language="javascript">
+  $(document).ready(function() {
+    theWidth = $(".imagePanel img").css('width');
+    $(".imagePanel").css('width',theWidth);
+});
+
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#homepage')){
+        e.preventDefault();
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
+
+</script>
+
+	<style>
+	* {
+		width:100%;
+	    margin:auto;
+		padding-left:0px;
+		padding-right:0px;
+		margin: 0;
+		border: none;
+		list-style-type: none;
+		font-size: large;
+	}
+	
+	.accordion {
+		width:100%;
+		padding-left:0px;
+		padding-right:0px;
+		margin:auto;
+	    border:1px solid #ccc;
+		height:auto;
+		text-align:justify;
+		/*text-wrap:unrestricted;*/
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:large;
+		/* background-color:#FFF;	*/
+	
+	}
+	
+	.accordion2 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:x-large;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+		/*text-wrap:suppress;*/
+	}
+	
+	.accordion3 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:x-large;
+		background-color:#FFF;
+		color:#FFF;
+		text-shadow:#666;
+	}
+	
+	
+	.imagePanel {
+    	margin: auto;
+		width:65%;
+	}
+	.imagePanel img { 
+	} 
+	.imagePanel p {
+	}    
+	.imagepanel a {
+		word-break:break-all;
+		
+	}
+	
+	.imagePanel2 {
+    	margin: auto;
+		width:100%;
+	}
+	.imagePanel2 img { 
+	} 
+	.imagePanel2 p {
+	}    
+	.imagepanel2 a {
+		
+		word-break:break-all;
+		
+	}
+	
+	.accordion .acc-content {
+		margin:auto;
+	    height: 0;
+	    overflow: hidden;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:large;
+		padding-left:5px;
+		padding-right:5px;
+		width:95%;
+		word-wrap:break-word;
+	}
+	
+	.accordion .acc-content2 {
+		margin:auto;
+		width:95%;
+		text-align:left;
+		display: block;
+		padding-top:1px;
+		padding-bottom:1px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#000;
+		font-weight: normal;
+		font-size: large;
+	}
+	
+	.linkers a
+	{
+		text-align:left;
+		color:#000;
+		font-weight:normal;
+		font-size: large;
+		text-decoration:underline;
+	}
+
+	
+	
+	.accordion li:target .acc-content {
+		margin:auto;
+	    height: auto;
+	    padding:0px;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:large;
+		background-color:#FFF;
+		padding-left:5px;
+		padding-right:5px;
+		text-wrap:unrestricted;
+
+	}
+	.accordion .acc-header a {
+		width:100%;
+		text-align:left;
+		display: block;
+		padding-top:3px;
+		padding-bottom:3px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#CCC;
+		/*text-shadow: 1px 1px 1px #000;*/
+		font-weight: bold;
+		font-size: large;
+		border-bottom: 1px solid #aaa;
+		background:#000;
+		text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:large;
+		text-indent:10px;
+	}
+	
+	.accordion .acc-header2 a {
+		width:100%;
+		text-align:left;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#000;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size: large;
+	border-bottom: 1px solid #aaa;
+	background:#fbb040;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header2 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:large;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header3 a {
+		width:100%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	text-shadow: 1px 1px 1px #000;
+	font-weight: bold;
+	font-size: large;
+	border-bottom: 1px solid #aaa;
+	background:#600;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header3 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:large;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header4 a {
+		width:100%;
+		text-align:left
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration:underline;
+	color:#000;
+	
+	font-weight:normal;
+	font-size: large;
+	
+	/*text-indent:10px;*/
+	
+	}
+.accordion .acc-header5 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:larger;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header5 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:larger;
+		text-indent:10px;
+	}	
+	body {
+	background-color: #FFF;
+}
+	</style>
+
+  </head>
+  <body id="homepage">
+  <div class="accordion2" id="sancharfirstlogo"><a href="index.html"><img src="assets/images/edusancharlogo_or_hor.jpg" width="349" alt="sancharFirst Logo"></a></div>
+  
+  <div class="accordion">
+    	<ul>
+        
+        	<li class="acc-header5" id="alpha"> 
+	        <a href="index.html">व्याख्या, संकल्पना, उपपत्ती -<br>
+	        माध्यम आणि पत्रकारिता अभ्यास</a>
+            </li>
+			
+			
+			<li class="acc-header2" id="journalism"> 
+		        <a href="#journalism">(Journalism) जर्नलिझम</a>
+		        <div class="acc-content"><p><strong>जर्नलिझम - पत्रकारिता :</strong></p>
+		          <p> वर्तमानपत्रे, रेडिओ, टेलिव्हिजन आणि माहिती महाजालाद्वारे शोधून काढलेली माहिती सर्वसामान्य लोकांपर्यंत पोहोचवणे याला सर्वसाधारणपणे पत्रकारिता असे म्हणतात. पत्रकारिता ही एखादी वस्तू किंवा उत्पादन नव्हे तर एक प्रक्रिया आहे. काही दशकांपूर्वी ही प्रक्रिया एकतर्फी समजली जात होती ज्यात पत्रकार जे सांगत होते ते प्रेक्षक ग्रहण करत होते. </p>
+		          <p>&nbsp;</p>
+		          <p>आता प्रेक्षकही या प्रक्रियेत सहभागी होतात, त्यांच्याकडे पाठवलेले संदेश स्वत:च्या अनुभवांच्या आधारे पडताळून पाहतात आणि त्या संदेशाबाबत स्वत:चे अनुमान काढतात. 
+		            पत्रकारितेच्या सामाजिक उद्दिष्टांबाबत खूप लिहिले गेले आहे.  मॅक्नायरच्या मता प्रमाणे प्रत्यक्ष जगाचा पत्रकाराने स्वत:पुरता अनुभवलेला आणि केलेला खुलासा, त्यावर एखाद्या माध्यमाच्या  विशिष्ट आवश्यकता लक्षात घेऊन केलेले संस्कार ज्यायोगे तो अनेक लोकांना सांगता येईल या प्रक्रियेला पत्रकारिता म्हणतात.  </p>
+		          <p>&nbsp;</p>
+		          <p>मॅक्वेल म्हणतो पत्रकारिता म्हणजे पैसे घेऊन केलेले लिखाण आणि दृकश्राव्य माध्यमांच्या बाबतीत असे जन माध्यम जे सर्वसामान्यजनांसाठी प्रसंगोचित नुकत्याच घडलेल्या   घटना सांगते. 
+		            पत्रकारिता ही सर्वसामान्य लोकांना त्यांच्या भोवती असलेल्या जगाची जाण करून देणारी आणि त्या जगाशी कसे वागावे याबाबतचे निर्णय घेण्यासाठी लागणारी माहिती पुरविणारे साधन आहे हा विचार आता खूप बदलला आहे.  पत्रकारितेच्या प्रक्रियेतून आता माध्यम संस्थांना माहितीचे पैशात मूल्य स्पष्ट कळले आहे. त्यामुळे पत्रकारिता ही केवळ एक प्रक्रिया राहिली नसून त्यातून निघणारी माहिती, विश्लेषण, प्रतिमा, रचना इत्यादी हे पत्रकारितेच्या प्रक्रियेचे उत्पादन म्हणून आता ओळखले जाते आणि याचे मूल्य समाजातील वेगवेगळ्या स्तरावर आकारले जाते आहे. </p>
+		          <p>&nbsp;</p>
+		          <p>पत्रकारितेच्या प्रक्रियेला लागणारा पैसाही आता अनेक पटींनी वाढला आहे. जी के चेस्टर्टन यांनी पत्रकारितेची व्याख्या करताना म्हटले की पत्रकारिता म्हणजे 'लॉर्ड जोंस मेला आहे' हे त्या लोकांना सांगणे ज्या लोकांना लॉर्ड जोंस जिवंत होता हे सुद्धा माहिती नव्हते.  पत्रकारिता म्हणजे आपली ती सहजप्रवृत्ती ज्यामुळे आपण रस्त्यावर घडलेल्या अपघाताकडे गर्दीत मान उँचावून पाहण्यास उद्युक्त होतो अशी परिभाषा सिम्प्सनने केली. अलिकडे  पत्रकारितेच्या बदलत्या स्वरूपामुळे कंड्या पिकवणारी पत्रकारिता, नव पत्रकारिता, शोध पत्रकारिता, टॅब्लॉइड पत्रकारिता असे पत्रकारितेचे प्रकार केले जाताहेत.		            </p>
+		          <p>&nbsp;</p>
+		          <p><strong>अधिक माहितीसाठी वाचा:		            </strong></p>
+		          <p>Curran, J and Seaton, J (1997) Power without Responsibility, Routledge.		            </p>
+		          <p>Franklin B (1997) Newszak and News Media, </p>
+		          <p>Arnold.		            Harcup, T (2004) Journalism:Principles and Practice, Sage
+	              McNair, </p>
+		          <p>B, Hibberd, M and Schlesanger, P (2002) 'Public Access Broadcasting and Democratic Participation in the Age of Mediated Democracy', Journalism Studies, 3(3): 407-22.	              </p>
+		          <p>McQuail, D (2000) Mass Communication Theory, Sage	              </p>
+		          <p>Randall, D (2000) The Universal Journalist, Pluto
+	              Simpson, J (2002) News from No Man's Land: Reporting the World, Macmillan.</p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			<li class="acc-header" id="jofa"> 
+		        <a href="#jofa">(Journalism of attachment) जर्नलिझम ऑफ अटॅचमेंट</a>
+		        <div class="acc-content"><p><strong>जर्नलिझम ऑफ अटॅचमेंट : </strong></p>
+		          <p>पूर्वीच्या युगोस्लावियामधील युद्धाच्या बातम्या देताना पत्रकारांनी असा विचार मांडला की पत्रकारांनी केवळ45 सरकारी आणि सैनिकी स्रोतांनी दिलेली माहिती प्रसारित करण्यापुरते काम करू नये तर युद्धाची मानवी आणि भावनिक किंमतही लोकांसमोर आणावी. यासाठी नि:पक्ष पद्धतीने स्वत:ला घडणार्‍या घटनांपासून वेगळे ठेवून चालणार नाही तर युद्धाचा ज्या ज्या माणसांवर परिणाम होतो त्यांच्याशी एकरूप होऊन, त्यांच्या संवेदना जाणून घेऊन त्या लोकांबद्दल सांगावे. </p>
+		          <p>&nbsp;</p>
+		          <p>पत्रकारितेतील वस्तुनिष्ठ पद्धती ही नेहमीच उपयोगाची नसते आणि कधी कधी व्यक्तीनिष्ठ पद्धत वापरूनही पत्रकारिता करावी लागते ही बाब या प्रसंगातून स्पष्ट झाली. ही विचार सर्वप्रथम मार्टिन बेल या पत्रकाराने मांडला. सीएनएनच्या पत्रकार क्रिस्टिऍन आमनपोर यांनी अशा प्रकारच्या पत्रकारितेबद्दल सांगताना असा मुद्दा मांडला की वस्तुनिष्ठ पत्रकारिता ही सर्व बाजू एकसारख्या पद्धतीने मांडते.  मात्र युद्ध करणारे सैन्य आणि युद्धात सापडून मेलेले सामान्य लोक यांची बाजू एकसारखीच कशी असेल? अत्याचार ज्याच्यावर होतो तो आणि अत्याचार जो करतो तो यांची बाजू एकसारखी कशी असेल? अशा वस्तुनिष्ठपणाने आपण एक प्रकारे अत्याचार्‍यांचीच बाजू मांडतो असे आमनपोरचे मत होते.		            </p>
+		          <p>&nbsp;</p>
+		          <p>मात्र अशाप्रकारच्या पत्रकारितेचे काही धोकेही आहेत. संघर्षात एखादी बाजू घेण्यासाठी चूक-बरोबर, अनैतिक-नैतिक असे त्या संघर्षातील गटांच्या बाबतीत मूल्याधिष्टित निर्णय घ्यावे लागतात. अशी बाजू घेण्याचा पत्रकारांना अधिकार अथवा जाण आहे काय? एकदा अशी नैतिक बाजू घेतली की एखादी व्यक्ती केवळ बळी आहे म्हणून बरोबर आहे असे गृहित धरून आरोपांची पडताळणी होणार नाही त्यामुळे केवळ एकच दृष्टिकोन लोकांसमोर यायचा धोका आहे. याच्या पुढे जाऊन मग पत्रकार मागणी करू लागतात की 'काहीतरी केले पाहिजे'. </p>
+		          <p>&nbsp;</p>
+		          <p>मात्र हे काहीतरी नमके काय आहे हे सामाजिक किंवा राजकीय संघर्षांमधे सांगता येत नाही. त्यामुळे अनेकदा पाश्चिमात्य देशांकडेच अशा संघर्षांवर उपाय आहे किंवा सैनिकी आक्रमण हाच पर्याय आहे अशी मते जोर धरू लागतात कारण अगोदरच पत्रकारांनी संघर्षाला केवळ दोन बाजूत मांडलेले असते आणि त्यातील एक बाजू चुकीची, अनैतिक आहे असे स्वत:ला पटवून घेतलेले असते.		            </p>
+		          <p>&nbsp;</p>
+		          <p><strong>अधिक माहितीसाठी वाचा:		            </strong></p>
+		          <p>Bell, M (1998) 'The Journalism of Attachment', in Kieren, M, Media Ethics, Routledge</p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+            
+            <li class="acc-header2" id="knowl"> 
+		        <a href="#knowl">(Knowledge) नॉलेज</a>
+		        <div class="acc-content"><p><strong>नॉलेज - ज्ञान :</strong></p>
+		          <p> नवीन आर्थिक व्यवस्थेचा हा पाया आहे. माहिती, संस्कृती आणि सृजनता या सगळ्यांबरोबर ज्ञान म्हणजे विचार, बौद्धिक संपत्ती इत्यादीचे स्रोत झाले आहे. पारंपरिक समजूतीनुसार ज्ञान हे विशिष्ट विषयांचे होते, वेगवेगळ्या भागात विभागलेले. मात्र आता ज्ञान हे विविध विषयांचे एकत्रिकरण, व्यावसायिक दबावाखाली वावरते आहे. </p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			<li class="acc-header" id="lobby"> 
+		        <a href="#lobby">(Lobby) लॉबी</a>
+		        <div class="acc-content"><p><strong>लॉबी :</strong></p>
+		          <p> ब्रिटनमधे 1884 साली झालेल्या नागरी गोंधळाच्या पार्श्वभूमीवर तेथील हाउस ऑफ कॉमंसच्या लॉबीत सामान्य नागरिकांना प्रवेश बंद करण्यात आला. केवळ काही निवडक राजकीय पत्रकारांनाच आत प्रवेश होता. हे पहिली लॉबी पत्रकार. हळू हळू या पत्रकारांच्या यादीत वाढ झाली मात्र यादीतील पत्रकारांनाच प्रवेश देण्याची प्रथा सुरूच राहिली. गेल्या काही वर्षात मात्र दृकश्राव्य माध्यमे आणि माहिती तंत्रज्ञानाच्या प्रसारामुळे स्वत: सरकारच पत्रकारांशी बोलायला उत्सुक असते त्यामुळे अशा लॉबी पत्रकारांवरील बंधने शिथील झाली आहेत. </p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			<li class="acc-header2" id="langu"> 
+		        <a href="#langu">(Language) लॅंग्वेजनॉलेज</a>
+		        <div class="acc-content"><p><strong>लॅंग्वेज - भाषा : </strong></p>
+		          <p>मानवी जीवनाच्या प्रत्येक क्षेत्रामध्ये भाषेचे अस्तित्व जाणवते. भाषेच्या द्वारे आपण रागवतो, प्रेम करतो, शिव्या देतो, निर्देश करतो, वर्णन करतो, आज्ञा देतो, खोटे बोलतो इत्यादी. मानवी समाजातील संपर्कप्रक्रियेमध्ये भाषेबरोबरच इतर माध्यमेही असतात. परंतु भाषा हे माध्यम जस सर्वस्पर्शी आहे तशी इतर माध्यमे नाहीत, असे मिलिंद मालशे म्हणतात. </p>
+		          <p>&nbsp;</p>
+		          <p>भाषेची काही लक्षणे त्यांनी सांगितली आहेत.  
+		            मानवी भाषा व मानवेतर प्राण्यांच्या संदेशनपद्धती यांची तुलना करताना सहजप्रेरणा व आनुवांशिकता या बाबींचा प्रथम विचार करता येईल. </p>
+		          <p>&nbsp;</p>
+		          <p>संदेशन मूलत: दोन जैविक सहजप्रेरणांशी बद्ध असते - संरक्षण आणि संवर्धन. मानवी सामाजिकतेमागच्या प्रेरणा या दोन सहजप्रेरणांपेक्षा निश्चितच कितीतरी पटींनी अधिक व्यामिश्र असतात. विशेषत: सांस्कृतिक घटकांमुळे केवळ संरक्षण संवर्धनाची मर्यादा मानवाने ओलांडली आहे, असे म्हणता येते. त्यामुळे केवळ वेदनात्मक वा रत्यात्मक वर्तनाचा भाग म्हणून भाषेचे कार्य मर्यादित राहत नाही तर असंख्य प्रकरची सामाजिक-सांस्कृतिक कार्ये करण्यासाठी तिचा वापर मानव करीत असतो.		            </p>
+		          <p>&nbsp;</p>
+		          <p>कोणत्याही संदेशनाच्या प्रक्रियेत चिन्हे वापरलेली असतात व त्यातून संदेश वा अर्थ यांचे प्रेषण आणि ग्रहण होते. चिन्हे व त्यातून चिन्हित होणारे संदेश यांचे नाते तपासले असता असे आढळते की मानवेतर संदेशनामध्ये हे नाते बव्हंशी शारीरिक पातळीवरचे, प्रत्यक्ष स्वरूपाचे असते. हे नाते अप्रत्यक्ष व यादृच्छिक असते. उदाहरणार्थ, भाषेचे ध्वनिघटक व त्यांतून व्यक्त होणारे अर्थ यांत निश्चित नाते नसते. 'म' मक्यातला आणि 'मका' यात कोणतेही प्रत्यक्ष, अंगभूत नाते नसते. </p>
+		          <p>&nbsp;</p>
+		          <p>यादृच्छिकता हे मानवी भाषेमागचे सार्वत्रिक तत्त्व म्हणून भाषाविज्ञानात मान्यता पावलेले आहे. चिन्हित होणार्‍या संदेशांची संख्या व स्वरूप यांचा विचार केला तर मानवी भाषा मानवेतर संदेशनपद्धतींपेक्षा अधिकच ठळकपणे वेगळी दिसू लागते. मानव आपल्या जीवनाचा, सामाजिक-सांस्कृतिक अस्तित्वाचा बहुतेक सर्व भाग अक्षरश: 'शब्द'बद्ध करायचा प्रयत्न करीत असतो. 
+		            मानवी भाषेचा शब्दसंग्रह मोठा व वाढता असतो हे खरे; परंतु तो काही अमर्याद नसतो. मात्र मानवी भाषेद्वारा किती संदेश पाठविता येतात यावर काही मर्यादाच नाही. </p>
+		          <p>&nbsp;</p>
+		          <p>याचे कारण मानवी भाषेतील संदेशन हे नुसत्या सुट्या सुट्या शब्दांनी होत नसते तर शब्दांच्या विशिष्ट प्रकारच्या रचनेतून, म्हणजे वाक्यरचनेतून, होत असते.  भाषेचे अमर्याद संदेशनात्मक सामर्थ्य म्हणजे तिची अमर्याद निर्मितिशीलता येथेच दडलेली आहे. 
+		            प्राण्यांच्या संदेशवहनपद्धतीपासून मानवी भाषेला वेगळी काढू शकेल अशी संकल्पना म्हणजे भाषिक व्यवस्था आणि संरचना. मानवी भाषेत सरासरी 30 ते 40 मूलध्वनी वापरले जातात तर वेर्वेट माकडे 36 वेगवेगळे आवाज वापरतान आढळतात. </p>
+		          <p>&nbsp;</p>
+		          <p>प्राण्यांच्या संदेशांची संख्या त्यांच्या मूलघटकांच्या संख्येइतकीच मर्यादित असते, कारण हे मूलघटक सुटे-सुटे वापरले जातात. मूलघटकांची विविध प्रकारे जुळणी करून अनंत, असंख्य संदेश पाठविण्याचे सामर्थ्य केवळ मानवी भाषेतच आढळते. सुट्या ध्वनिघटकांना मानवी भाषेत सर्वसाधारणपणे अर्थ प्राप्त झालेला नसतो; उदाहरणार्थ ण, आ, ई, प, परंतु त्यांची विशिष्ट नियमांनुसार जुळणी झाली की अर्थपूर्ण रूपे, म्हणजे 'शब्द' तयार होतात - 'पाणी'.  </p>
+		          <p>&nbsp;</p>
+		          <p>तेव्हा मानवी भाषेच्या संरचनेला दोन स्तर असतात असे म्हणता येईल: वेगवेगळे असंख्य ध्वनी निर्मान करण्याचे सामर्थ्य आपल्या वागिन्द्रियात असले तरी प्रत्येक भाषा त्यांतल्या काही ध्वनींचाच मूलध्वनी म्हणून स्वीकार करते, तेव्हा मूलघटकांचा मरादित साठा, हा एक स्तर आणि या मूलघटकांची जुळणी करण्याचे नियम  निश्चित करून, त्यांतून अर्थपूर्ण किंवा संदेशवाहक रूपे निर्माण करणे, हा भाषिक संरचनेचा दुसरा स्तर.		            </p>
+		          <p>&nbsp;</p>
+		          <p><strong>अधिक माहितीसाठी वाचा:		            </strong></p>
+		          <p>मालशे, मिलिंद, (2004) आधुनिक भाषाविज्ञान: सिद्धांत आणि उपयोजन, लोकवाङ्मय गृह.		            </p>
+		          <p>Chomsky, Noam (1957) Syntactic Structures, Paris: Mouton		            </p>
+		          <p>Chomsky, Noam (1958) 'A Review of B F Skinner's Verbal Behaviour, Language, 35:26-58. Included in Fodor & Katz (1964) pp 547-578.		            </p>
+		          <p>Saussure, F de (1974) Course in General Linguistics (Tr. From French by Wade Baskin) Fontana/Collins.45 </p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			<li class="acc-header" id="langue"> 
+		        <a href="#langue">(Langue) लॅंग</a>
+		        <div class="acc-content">
+		          <p><strong>लॅंग - भाषिक व्यवस्था </strong></p>
+		          <p>विसाव्या शताकात पारंपरिक भाषाभ्यासाविरुद्ध जे आक्षेप घेतले गेले त्यांच्यामागे मुख्य्त: फेर्दिनां द सोस्यूर या अभ्यासकाने केलेल्या 'एककालिक' व 'कालक्रिमिक' भाषाभ्यास या भेदाची प्रेरणा आहे. य संदर्भामध्ये सोस्यूरने भाषा व बुद्धिबळाचा खेळ यांची केलेली तुलना उद्बोधक आहे. दोहोंमध्ये घटकांची एक संरचना अभिप्रेत असते आणि त्यांतील प्रत्येक घटकाचे मूल्य संरचनेतील इतर घटकांशी त्या घटकाचे जे संबंध असतात त्यावर अवलंबून असते. ही संरचना परिवर्तनशील असते. परंतु कोणत्याही एखाद्या क्षणी ती ज्या स्थितीमध्ये आहे तिचे विश्लेषण शक्य असते. </p>
+		          <p>&nbsp;</p>
+		          <p>इतकेच नव्हे तर हे एककालिक विश्लेषण फर मौलिक असते असे सोस्यूरचे मत होते. आधुनिक भाषाविज्ञानाचा पाया सोस्यूरने घातला.  भाषेच्या एककालिक विश्लेषणाला अग्रक्रम देण्याचे श्रेय सोस्यूरकडे जाते. सोस्यूरने या विश्लेषणामध्ये पायाभूत ठरणार्‍या काही संकल्पनादेखील प्रथम मांडल्या. यांपैकी सर्वात महत्त्वाची संकल्पना म्हणजे 'व्यवस्था' किंवा 'संरचना' होय. आपण प्रत्यक्षात बोलण्याची वा ऐकण्याची जी क्रिया करतो ती व्यक्तीव्यक्तीनुसार थोडीफार भिन्न असते. </p>
+		          <p>&nbsp;</p>
+		          <p>परंतु तरीसुद्धा व्यक्तीव्यक्तीनुसार किंवा क्षणोक्षणी बदलणार्‍या या वर्तनातून संदेशन होते. याचा अर्थ असा की या चल वाटणार्‍या वर्तनामागे, व्यवहारामागे एक व्यक्तिनिरपेक्ष, खूपशी अचल आणि एकजिनसी स्वरूपाची भाषिक व्यवस्था असते आणि भाषावैज्ञानिकाच्या दृष्टिनेही भाषिक व्यवस्था महत्त्वाची ठरते. सोस्यूरने केलेला भाषिक वर्तन (parole) व व्यवस्था (langue) हा भेद, किंवा वेगळ्या शब्दांत 'भाषण'  (speech) व 'भाषा' (language) हा भेद, आधुनिक भाषाविज्ञानात एक मौलिक भेद म्हणून ओळखला  गेला आहे.		            </p>
+		          <p>&nbsp;</p>
+		          <p><strong>अधिक माहितीसाठी वाचा:		            </strong></p>
+		          <p>मालशे, मिलिंद, (2004) आधुनिक भाषाविज्ञान: सिद्धांत आणि उपयोजन, लोकवाङ्मय गृह.		            </p>
+		          <p>Chomsky, Noam (1957) Syntactic Structures, Paris: Mouton		            </p>
+		          <p>Chomsky, Noam (1958) 'A Review of B F Skinner's Verbal Behaviour, Language, 35:26-58. Included in Fodor & Katz (1964) pp 547-578.		            </p>
+		          <p>Saussure, F de (1974) Course in General Linguistics (Tr. From French by Wade Baskin) Fontana/Collins.45</p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			
+			
+			
+			<li class="acc-header2" id="lifest"> 
+		        <a href="#lifest">(Lifestyle) लाइफस्टाइल</a>
+		        <div class="acc-content">
+		          <p><strong>लाइफस्टाइल - जीवनशैली </strong></p>
+		          <p>संस्कृती आणि माध्यम अभ्यासात हा शब्द दोन संदर्भात येतो. जीवनशैली हा 'ओळखीचा' एक भाग आहे. म्हणजे ज्याप्रमाणे वंश, जात, वर्ण, वर्ग हे दोन माणसातील45किंवा गटातील फरक दर्शवतात त्याचप्रमाणे जीवनशैलीसुद्धा फरक दर्शवण्याचे एक साधन आहे. त्याचबरोबर जीवनशैलीचा संबंध हा टीव्ही आणि मासिक पत्रकारितेशी आहे. </p>
+		          <p>&nbsp;</p>
+		          <p>बातम्यांचे पारंपरिक स्वरूप बदलले आहे ते जीवनशैलीमुळे. एखाद्याचे घर, स्वयंपाकघर, बाग, पाळीव प्राणी, व्यायाम पद्धती, वापरत असलेली सौंदर्यप्रसाधने, खरेदीची ठिकाणे, बाहेर खाण्याची ठिकाणे, खाणेपिणे, कपड्यांच्या आवडीनिवडी इत्यादी गोष्टींचीसुद्धा आता 'बातमी' होते. या सगळ्या व्यक्तिगत स्वरूपाच्या आणि पारंपरिक पठडीत न बसणार्‍या 'बातम्या' आहेत. पत्रकारितेच्या क्षेत्रात आज अशा प्रकारच्या बातम्यांना खूप मागणी आहे.		            </p>
+		          <p>&nbsp;</p>
+		          <p><strong>अधिक माहितीसाठी वाचा:		            </strong></p>
+		          <p>Giddens, A. 1991. Modernity and self-identity: self and society in the late modern age. Cambridge: Polity Press.</p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			<li class="acc-header" id="liter"> 
+		        <a href="#liter">(Literacy) लिटरसीलाइफस्टाइल</a>
+		        <div class="acc-content"><p><strong>लिटरसी - साक्षरता : </strong></p>
+		          <p>लिहिण्याची सामाजिक क्रिया ज्यातून संदेशन शक्य होते. साक्षरतेची चर्चा व्यक्तिगत पातळीवर नसते तर सामाजिक पातळीवर असते. साक्षरता ही एक सामाजिक व्यवस्था आहे आणि कुठल्याही सामाजिक व्यवस्थेच्या प्रसार आणि नियमनावर विविध पातळींवर दबाव आणला जातो तसा साक्षरतेबाबतही आला आहे. कोणी साक्षर असावे आणि साक्षरता कशासाठी वापरावी यावर नियंत्रण ठेवण्याची चढाओढ मानवी इतिहासात जुनी आहे. </p>
+		          <p>&nbsp;</p>
+		          <p>आधुनिक समाजात वैश्विक साक्षरतेचा आग्रह धरला जातो. संदेशनात बोलण्यापेक्षा साक्षरतेचा प्रादुर्भ्याव अधिक झाल्यामुळे एक वेगळेच जग तयार झाले आहे ज्याची व्याप्ती अफाट आहे. याकडे सर्वप्रथम लक्ष वेधले ते मार्शल मॅक्लुहन या अभ्यासकाने. साक्षरता ही औद्योगिक उत्पादनासाठी आवश्यक आहे. मोठ्या प्रमाणावर असा साक्षर  वर्ग तयार करण्यासाठी शिक्षणही तसे हवे आणि एवढ्या मोठ्या प्रमाणावर हे काम केवळ राज्यस्तरावरच शक्य आहे.		            </p>
+		          <p>&nbsp;</p>
+		          <p><strong>अधिक माहितीसाठी वाचा:		            </strong></p>
+		          <p>Briggs, Asa and Burke, Peter (2002) A Social History of the Media: from Gutenberg to the Internet, Polity, Cambridge		            </p>
+		          <p>Kress, G. (2003). Literacy in the new media age. London: Routledge.</p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			
+			<li class="acc-header2" id="locali"> 
+		        <a href="#locali">(Localisation) लोकलायझेशन</a>
+		        <div class="acc-content"><p><strong>लोकलायझेशन - स्थानिकीकरण : </strong></p>
+		          <p>जागतिकीकरणामुळे आर्थिक आणि सांस्कृतिक देवाणघेवाण आता भौगोलिक सीमांपलीकडे शक्य झाली आहे. राज्यांच्या सीमांपलिकडे आता व्यवहार शक्य आहे. अशा व्यवहारावर आता राज्यांची प्रशासनिक पकड ढीली झालेली दिसते. तरीही असे अनेक प्रदेश आहेत ज्यांची ओळख आजही तेथे काय तयार होते यावरून केली जाते. उदाहरणार्थ जोडे इटॅलीमधे, कोल्हापूरच्या चपला, अत्तरे कन्नौजची, घड्याळे स्वित्झर्लंडची, चित्रपट हॉलिवुडचे. </p>
+		          <p>&nbsp;</p>
+		          <p>अशाप्रकारे त्या त्या भौगोलिक प्रदेशाची वैशिष्ट्ये उपयोगात आणून उत्पादन करणे याला स्थानिकीकरण म्हणतात. जागतिकीकरणामुळे स्थानिकीकरणाची प्रक्रिया अधिक वाढेल असे मानले जाते. माहिती तंत्रज्ञानामुळे कुठले उत्पादन कुठे तयार करणे सर्वात श्रेयस्कार आणि सोयिस्कर आहे हे पडताळणे आणि तसे करणे आता सहज शक्य आहे. 
+		            माध्यमांच्या दृष्टिने विचार केला तर असे लक्षात येते की जागतिकीकरणाबरोबर आता स्थानिक सांस्कृतिक घटना आणि बातम्यांनाही तितकेच महत्त्व आले आहे. याचे कारण असे की माहितीच्या प्रसाराने आता जीवनशैली बद्दलचे कुतूहल वाढत आहे. ही प्रक्रिया जागतिक पातळीवर होते आहे आणि स्थानिक गोष्टींबाबत जगात उत्सुकता वाढत आहे.		            </p>
+		          <p>&nbsp;</p>
+		          <p><strong>अधिक माहितीसाठी वाचा:		            </strong></p>
+		          <p>Hartley, J.: "Mass communication", in O'Sullivan; Fiske (eds): Key Concept in Communication and Cultural Studies (Routledge, 1997).</p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			
+			<li class="acc-header" id="leader"> 
+		        <a href="#leader">(Leader) लीडर</a>
+		        <div class="acc-content">
+		          <p><strong>लीडर </strong></p>
+		          <p>वर्तमानपत्रातील मुख्य संपादकीय. ऑडिओ टेप मधे अगदी 
+		            
+		            सुरूवातीला एक रंगीबिरंगी टेप असते. या टेपच्या तुकड्याला सुद्धा लीडर असे म्हणतात. 
+		            
+		            टेपवर रेकॉर्ड करताना एकदम रेकॉर्डिंगला सुरुवात होऊ नये यासाठी अशी सोय करण्यात 
+		            
+		            येते. </p>
+		          <p>&nbsp;</p>
+				</div>
+		    </li>
+			
+			<li class="acc-header5" id="alpha"> 
+	        <a href="index.html">मुख्य पानावर परत</a>
+            </li>
+            
+			
+			
+			
+		</ul>
+	</div>
+    
+  </body>
+</html>

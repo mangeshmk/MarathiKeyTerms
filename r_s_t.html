@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script language="javascript">
+  $(document).ready(function() {
+    theWidth = $(".imagePanel img").css('width');
+    $(".imagePanel").css('width',theWidth);
+});
+
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#homepage')){
+        e.preventDefault();
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
+
+</script>
+
+	<style>
+	* {
+		width:100%;
+	    margin:auto;
+		padding-left:0px;
+		padding-right:0px;
+		margin: 0;
+		border: none;
+		list-style-type: none;
+		font-size: large;
+	}
+	
+	.accordion {
+		width:100%;
+		padding-left:0px;
+		padding-right:0px;
+		margin:auto;
+	    border:1px solid #ccc;
+		height:auto;
+		text-align:justify;
+		/*text-wrap:unrestricted;*/
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:large;
+		/* background-color:#FFF;	*/
+	
+	}
+	
+	.accordion2 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:x-large;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+		/*text-wrap:suppress;*/
+	}
+	
+	.accordion3 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:x-large;
+		background-color:#FFF;
+		color:#FFF;
+		text-shadow:#666;
+	}
+	
+	
+	.imagePanel {
+    	margin: auto;
+		width:65%;
+	}
+	.imagePanel img { 
+	} 
+	.imagePanel p {
+	}    
+	.imagepanel a {
+		word-break:break-all;
+		
+	}
+	
+	.imagePanel2 {
+    	margin: auto;
+		width:100%;
+	}
+	.imagePanel2 img { 
+	} 
+	.imagePanel2 p {
+	}    
+	.imagepanel2 a {
+		
+		word-break:break-all;
+		
+	}
+	
+	.accordion .acc-content {
+		margin:auto;
+	    height: 0;
+	    overflow: hidden;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:large;
+		padding-left:5px;
+		padding-right:5px;
+		width:95%;
+		word-wrap:break-word;
+	}
+	
+	.accordion .acc-content2 {
+		margin:auto;
+		width:95%;
+		text-align:left;
+		display: block;
+		padding-top:1px;
+		padding-bottom:1px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#000;
+		font-weight: normal;
+		font-size: large;
+	}
+	
+	.linkers a
+	{
+		text-align:left;
+		color:#000;
+		font-weight:normal;
+		font-size: large;
+		text-decoration:underline;
+	}
+
+	
+	
+	.accordion li:target .acc-content {
+		margin:auto;
+	    height: auto;
+	    padding:0px;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:large;
+		background-color:#FFF;
+		padding-left:5px;
+		padding-right:5px;
+		text-wrap:unrestricted;
+
+	}
+	.accordion .acc-header a {
+		width:100%;
+		text-align:left;
+		display: block;
+		padding-top:3px;
+		padding-bottom:3px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#CCC;
+		/*text-shadow: 1px 1px 1px #000;*/
+		font-weight: bold;
+		font-size: large;
+		border-bottom: 1px solid #aaa;
+		background:#000;
+		text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:large;
+		text-indent:10px;
+	}
+	
+	.accordion .acc-header2 a {
+		width:100%;
+		text-align:left;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#000;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size: large;
+	border-bottom: 1px solid #aaa;
+	background:#fbb040;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header2 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:large;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header3 a {
+		width:100%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	text-shadow: 1px 1px 1px #000;
+	font-weight: bold;
+	font-size: large;
+	border-bottom: 1px solid #aaa;
+	background:#600;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header3 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:large;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header4 a {
+		width:100%;
+		text-align:left
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration:underline;
+	color:#000;
+	
+	font-weight:normal;
+	font-size: large;
+	
+	/*text-indent:10px;*/
+	
+	}
+.accordion .acc-header5 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:larger;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header5 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:larger;
+		text-indent:10px;
+	}	
+	body {
+	background-color: #FFF;
+}
+	</style>
+
+  </head>
+  <body id="homepage">
+  <div class="accordion2" id="sancharfirstlogo"><a href="index.html"><img src="assets/images/edusancharlogo_or_hor.jpg" width="349" alt="sancharFirst Logo"></a></div>
+  
+  <div class="accordion">
+    	<ul>
+        
+        	<li class="acc-header5" id="alpha"> 
+	        <a href="index.html">व्याख्या, संकल्पना, उपपत्ती -<br>
+	        माध्यम आणि पत्रकारिता अभ्यास</a>
+            </li>
+            
+         
+			
+			<li class="acc-header2" id="redr"> 
+		        <a href="#redr">(Reader) रीडर</a>
+	          <div class="acc-content">
+	            <p><strong>रीडर</strong> - वाचक हे माध्यम उद्योगाचे परिणाम असतात. भौगोलिकता, धन, शिक्षण इत्यादी प्रभावी पृथक्करणापेक्षा वेगळ्याच परिमाणांतून वर्तमानपत्रांचे वाचक तयार होतात आणि त्यांच्या एकत्रितपणातून समाज, राष्ट्र यांसारख्या संज्ञांसाठी पर्याय म्हणून वापर केला जातो. एका वेगळ्या अर्थाने वाचक हे माध्यम उद्योगातून 'उत्पादित' होतात आणि हे 'उत्पादन' हे उद्योग जाहिरातदारांना विकतात. <br>
+		            <br>
+		          </p>
+			  </div>
+		    </li>
+			
+			
+			<li class="acc-header" id="realtv"> 
+		        <a href="#realtv">(Reality TV) रिअॅलिटी टीव्ही</a>
+              <div class="acc-content">
+                <p><strong>रिअॅलिटी टीव्ही</strong> - टीव्हीवरील कार्यक्रमांतील एक नुकताच सुरू झालेला प्रकार. या कार्यक्रमांचे स्वरूप काय असते ते सांगणे नेमकेपणाने शक्य नाही कारण त्यांसे स्वरूप सतत बदलत गेले आहे. यात 'रिअॅलिटी' असा शब्द जरी आला असला तरी यात वास्तव आपल्या अर्थाने नसते. नाहीतर रोजच्या टीव्हीवरच्या बातम्यांना तीच संज्ञा वापरावी लागेल. या प्रकारच्या कार्यक्रमांची सुरुवात एकोणिसशे नव्वदच्या सुरुवातीच्या काळात अमेरिकेतील काही कार्यक्रमांपासून झाली. त्या कार्यक्रमांमधे तेथील आणीबाणीच्या सेवा कशा काम करतात ते दाखवले होते. प्रत्यक्ष काम करतांनाचे हे प्रसंग होते. अशाच काही 'शोज' मधून गुन्ह्यांचा मागोवा घेणे, गुन्हेगारांचा पाठलाग करणे इत्यादि दाखवण्यात आले आणि या कामाला लोकसेवा म्हटले गेले ज्यामुळे या कार्यक्रमांना लोकमान्याताही मिळाली.  </p>
+                <p>&nbsp;</p>
+                <p>असाच आणखी एक प्रकार म्हणजे 'डॉक्यु-सोप' ज्यात रोजच्या घडणार्या घटनांमधील नाट्यमयता मालिकांमधून दाखवली जायची. अशा कार्यक्रमांत 'सामान्य' लोकांना 'स्टार' बनवून टीव्हीवर आणले जायचे.  रिअॅलिटी टीव्हीमधे वास्तव किती असते हे लपवले जात नाही. किंबहुना जसजसे हे कार्यक्रम लोकप्रिय होत गेले तसतसे यातील निर्मिती मूल्यांचे महत्त्व वाढत गेले आणि वास्तव त्याप्रमाणात कमी होत गेले. ही गोष्ट प्रेक्षकांना माहीत आहे तरीही लोक हे कार्यक्रम पाहतात कारण त्यांना यात सहभाग घेणार्यांच्या परफॉर्मन्सचे मूल्यांकन करायचे असते. </p>
+                <p>&nbsp;</p>
+                <p>अशा मूल्यांकन करण्यामागचे आकर्षण जेव्हा परफॉर्मन्स कोलमडून पडतो तेव्हा सर्वाधिक असते. अशावेळी वेगळेच वास्तव समोर येते आणि मग रडणे, एकमेकांवर कुरघोडी करणे, दुखापत होणे, हरल्यानंतरचे चेहरे हे सगळे या 'वास्तव झलकी'चा भाग असतो जो लोकांना आकर्षित करतो.  </p>
+                <p>&nbsp;</p>
+                <p>एकूणच विविध कार्यक्रम प्रकारांची सरमिसळ करत टीव्ही ज्याप्रकारे नव्या संकल्पनांना जन्म देतो आहे त्यातीलच हा एक प्रकार आहे ज्याचा अभ्यास होणे गरजेचे आहे. <br>
+		            <br>
+	            </p>
+			  </div>
+		    </li>
+			
+			
+            <li class="acc-header2" id="rearview"> 
+		        <a href="#rearview">(Rearviewmirrorism) रेअरव्ह्युमिररिझम</a>
+              <div class="acc-content">
+                <p><strong>रेअरव्ह्युमिररिझम</strong></p>
+                <p>मार्शल मॅक्लुहानने ही संज्ञा पहिल्यांदा १९६४ साली मांडली. एखाद्या नवीन तंत्रज्ञानाने अथवा माध्यमाने अशा एका जु्न्या तंत्रज्ञानाचे अनुकरण करायचे ज्या तंत्रज्ञानाची जागा ते नवीन तंत्रज्ञान घेणार आहे. अगदी सुुरुवातीला छापली गेलेली पुस्तके त्याअगोदरच्या हस्तलिखितांसारखी दिसत. काँक्रिट वापरून बनवलेले पहिले युनायटेड किंग्डममधील घर हे वेल्समधे ग्रेगिनॉग हॉल होते ते त्यापूर्वीच्या काळातील ट्युडॉर हाफ टिंबरिंग सारखे दिसात होते. </p>
+                <p>&nbsp;</p>
+                <p>पहिल्या छायाचित्राचा आराखडा आणि इतर बाबी त्याकाळातील व्यक्तिचित्रे आणि चित्रांसारखा होता. अगदी सुरुवातीला टीव्ही अंधारलेल्या खोल्यांत पाहिला जाता, चित्रपटाप्रमाणे. हे मागे वळून पाहण्यासारखे आहे म्हणून त्याला रेअर व्ह्यु असे म्हटले आहे. नव्या माध्यमाने स्वतःचा आकार आणि सौंदर्य कशात आहे हे ओळखून लवकरात लवकार आपले स्थान आत्माविश्वाने तयार करणे आवश्यक असते मात्र ते करत असतांना ही नवीन माध्यमे अगोदरच्या माध्यमांच्या संस्कारात वावरत असतात.  </p>
+                <p>&nbsp;</p>
+                <p><strong>अधिक माहितीसाठी पाहा </strong></p>
+                <p>Hartley, John, Teleo-logy, Studies in Television, 1992</p>
+                <p><br>
+                </p>
+			  </div>
+		    </li>
+			
+			
+            
+			<li class="acc-header" id="repr"> 
+		        <a href="#repr">(Representation) रिप्रेझेंटेशन</a>
+		        <div class="acc-content">
+		          <p><strong>रिप्रेझेंटेशन – प्रतिनिधित्व</strong><br>
+		            एखादा विचार, व्यक्ती, समाज गट इत्यादिंचे निर्देशन शब्द अथवा आकृत्या वापरून केले जाते तेव्हा ते शब्द अथवा आकृत्या प्रातिनिधिक असतात. अशा प्रकारच्या प्रातिनिधिक शब्दांमधे आणि आकृत्यांमधे विविध प्रकारची माणसे, विचार इत्यादींचे गटागटात विभाजन करणे, काहींचे महत्त्व वाढवणे, काहींचे महत्त्व कमी करणे, काहींची प्रतिमा उंचावणे तर काहींची प्रतिमा मलीन करण्याची क्षमता असते.
+वास्तविकतेची मांडणी करत असताना प्रातिनिधिकतेचा उपयोग माध्यमांना करावा लागतो. मात्र अशा प्रकारच्या प्रातिनिधिकतेतून वास्तविकतेचा विपर्यास होतो काय, वास्तवाचे प्रातिनिधिक स्वरूप किती प्रातिनिधिक असते, अशा काही प्रश्नांचा उहापोह सध्या होत आहे.</p>
+		          <p>&nbsp;</p>
+		          <p>प्रातिनिधिकतेत अनेक शब्द किंवा आकृत्यांमधून काहींची निवड करणे अपरिहार्य होते. ही निवड प्रक्रिया व्यक्तिनिष्ठ असते. अशा परिस्थितीत प्रातिनिधिक प्रतिमा खरेतर प्रातिनिधिक नसतेच असे म्हणता येईल. याबाबतची टोकाची भूमिका घेतली बोदिला (Baudrillard) या अभ्यसकाने. बोदिला म्हणाला की जगभरात सर्वसामान्य माणसांनी पाहिलेले आखाती युद्ध (Gulf War) झालेच नाही. जे आपल्याला दाखवले गेले ते होते त्या युद्धाचे प्रातिनिधिक स्वरूप जे स्वरूप त्या युद्धात सहभागी झालेल्या काही मोजक्या पक्षांनी तयार केले होते. म्हणजेच वास्तवात आखातात काय घडले ते वेगळेच होते. 
+		            वर्ण, जात, धर्म यांबाबत जे वास्तव समाजात आहे ते मांडताना पत्रकार नेहमीप्रमाणे प्रातिनिधिकतेचा उपयोग करत असतात. </p>
+		          <p>&nbsp;</p>
+		          <p>मात्र हे प्रातिनिधिक स्वरूप नेहमीच आक्षेपार्ह असते. बेरोजगारी, शोषण, विषमता वा गरीबीचा प्रातिनिधिक उपयोग करून एखाद्या समाजाचे नकारात्मक स्वरूप दाखवावे जेणे करून त्या समाजाचे ‘वास्तव’ लोकांसमोर येईल आणि समाजाबाबत सहानुभूति निर्माण होईल की त्या त्या समाजातील सकारत्मक जे आहे ते दाखवावे जेणे करून तो समाज मुख्य प्रवाहात सामील होईल? मुळात ‘मुख्य प्रवाह’ ही संकल्पनासुद्धा प्रातिनिधिकतेतूनच निर्माण होते. 
+		            अशा परिस्थितीत प्रातिनिधिकतेपेक्षा ‘बांधणी’ कडे अधिक भर दिल्यास वास्तव कसे मांडले जात आहे याचा अभ्यास अधिक सोयिस्कार होईल असे काही अभ्यासकांचे म्हणणे आहे. </p>
+		          <p>&nbsp;</p>
+		          <p>माध्यमे आणि पत्रकार वास्तवाची मांडणी करीत असताना प्रत्यक्षात विचारांचे, प्रतिमांचे जणू बांधकामच करत असतात. असे केल्यामुळे वास्तवाला एक बौद्धिक चौकट मिळते. पत्रकार केवळ वास्तव मांडत नाही तर त्या वास्तवाशी एकरूप होतात, ते वास्तव जगतात, त्या वास्तवावर परिणाम करतात आणि त्यांच्यावर वास्तवाचा परिणाम होत असतो. ही सतत होणारी प्रक्रिया आहे. त्यामुळे आज, आता ज्या प्रातिनिधिक प्रतिमा पत्रकार निर्माण करेल आणि वापरेल त्या प्रतिमा कदाचित पुढच्या क्षणी बदललेल्या असतील. अशावेळी प्रतिमांचे प्रातिनिधिक स्वरूप अभ्यासण्यापेक्षा वास्तवाची बांधणी कशी केली आहे, संदर्भांची चौकट काय आहे हे अभ्यासणे अधिक सोयिस्कर होईल.		            </p>
+		          <p>&nbsp;</p>
+		          <p><strong>अधिक माहितीसाठी वाचा</strong>:
+		            <br>
+		            MacDonald, M (2003) Exploring Media Discourse, London: Arnold.
+		            Pickering, M (2001) <br>
+		            Stereotyping: The Politics of Representation. Houndsmills: Palgrave.<br>
+		            <br>
+		          </p>
+				</div>
+		    </li>
+			
+			
+			
+			<li class="acc-header2" id="selfcen"> 
+		        <a href="#selfcen">(Self Censorship) सेल्फ सेंसरशिपरिप्रेझेंटेशन</a>
+		        <div class="acc-content"><p><strong>सेल्फ सेंसरशिप</strong> – एखाद्या व्यक्तीने अथवा संस्थेने स्वत:हून आपल्या विचार आणि अभिव्यक्ती स्वातंत्र्यावर निर्बंध घालण्याला सेल्फ सेंसरशिप म्हणतात. अशा प्रकारचे निर्बंध स्वत:वर लागू करणे बरे की राज्य किंवा प्रशासनाकरवी तसे निर्बंध घालणे बरे यावर बरीच मते आहेत. विचार आणि अभिव्यक्ती स्वातंत्र्य हे भारताच्या घटनेप्रमाणे जगातील इतर देशातील घटनांमधेसुद्धा मूलभूत हक्क म्हणून मान्य केले आहे. विचार आणि अभिव्यक्ती स्वातंत्र्य जर उपभोगायचे असेल आणि अशा स्वातंत्र्यातून लोकशाही चालवायची असेल तर माध्यमे खाजगी मालकीची असणे आवश्यक आहे असा एक मतप्रवाह आहे. </p>
+		          <p>&nbsp;</p>
+		          <p>मात्र खाजगी मालकीची माध्यमे ही नेहमीच लोकहित जपतील काय की व्यावसायिक फायद्यासाठी लोकहिताला घातक अशा गोष्टी करतील? अशा परिस्थितीत माध्यमांच्या विचार आणि अभिव्यक्ती स्वातंत्र्याच्या दुरुपयोगाला निर्बंध कोण घालणार? या प्रश्नांच्या चर्चेतून माध्यमांनी काय छापावे, दाखवावे याबाबत समाजहित, विचार आणि अभिव्यक्ती स्वातंत्र्याच्या तत्त्वांच्या दृष्टीने आणि लोकशाहीची मूल्ये जपण्याच्या दृष्टीने माध्यमांनी स्वत:वर निर्बंध घालावे असा विचार जास्त योग्य आहे असे बहुमत आहे. 
+		            मात्र स्वत:वर निर्बंध घालत असताना पत्रकारितेच्या काही मूल्यांना जपावे लागते आणि ते कठीण होऊन बसते. पत्रकारितेत वस्तुनिष्ठतेला फार महत्त्व आहे. जर पत्रकारांनी किंवा माध्यम संस्थांनी स्वत:वर निर्बंध घातले तर वस्तुनिष्ठता कशी राखता येईल? कारण कुठली बातमी कशी आणि किती महत्त्व देऊन छापायची हा निर्णय त्या त्या पत्रकाराच्या आणि माध्यम संस्थेच्या अख्त्यारीतला प्रश्न होऊन जातो. बातमी छापलीच नाही तर वाचकांना त्या घटनेबाबत कळणे शक्यच नाही आणि त्यावर विचार करणे, काही मत बनवणेही शक्य नाही.		            </p>
+		          <p>&nbsp;</p>
+		          <p>वाढत्या व्यावसायिकतेमुळे माध्यम संस्था नेहमीच लोकहित जपण्यासाठी स्वत:वर निर्बंध घालत नसतात तर व्यावसायिक नफा किंवा नुकसान पाहून असे निर्णय घेतले जातात. यात माध्यम संस्थांचा जरी फायदा होत असला तरी लोकहिताचा बळी जाण्याची शक्यता आहे. 
+		            युद्धाच्या प्रसंगी पत्रकाराने शत्रू राष्ट्राबाबतच्या सकारात्मक बातम्या द्याव्यात काय? आपल्याच देशाबाबतचे नकारात्मक चित्र तयार होईल अशा बातम्या पत्रकारांनी  द्याव्यात काय? देशाची सुरक्षितता, राजकारण आणि अर्थकारणासारख्या विषयांबाबत स्वत:वर निर्बंध घालणे अनेकदा आवश्यक असते मात्र अशाप्रकारच्या निर्बंधांमुळे विचार आणि अभिव्यक्ती स्वातंत्र्यावर मर्यादा पडतात.<br>
+		            <br>
+		          </p>
+				</div>
+		    </li>
+			
+			
+			
+			
+			<li class="acc-header" id="selfreg"> 
+		        <a href="#selfreg">(Self-regulation) सेल्फ रेग्युलेशन</a>
+		        <div class="acc-content"><p><strong>सेल्फ रेग्युलेशन </strong>– संस्थांचे नियमन कायद्याने होते तसेच संस्था स्वत:चे नियमन स्वत:च करू शकतात. स्वत:चे नियमन करणे म्हणजे सेल्फ रेग्युलेशन. विचार आणि अभिव्यक्ती स्वतंत्र्याचा अधिकार ज्या देशांमध्ये घटनेने बहाल केला आहे अशा देशांमधे माध्यम संस्थांनी स्वत:चे नियमन करावे अशी अपेक्षा असते. वर्तमानपत्रांच्या बाबतीत भारतात हे काम प्रेस काउंसिल ऑफ इंडिया करते. स्वत:चे नियमन करण्यासाठी संस्थांनी आपली मूल्ये, तत्त्वे आणि नैतिक जबाबदारी स्पष्ट करणे आवश्यक असते. ही मूल्ये, तत्त्वे आणि नैतिक जबाबदारी संस्थांमध्ये काम करणार्‍या प्रत्येक व्यक्तीने पाळली पाहिजेत अशी अपेक्षा असते. 
+</p>
+		          <p>&nbsp;</p>
+		          <p>माध्यमांच्या बाबतीत अशाप्रकारच्या नियमनाचा एक तोटा आहे. स्वत: स्वत:साठी नियम बनवित असताना माध्यम संस्था नियमांचे उल्लंघन केल्यास त्यासाठीची शिक्षा नगण्य ठेवतात. अशामुळे मुल्ये किंवा नैतिकतेचे उल्लंघन झालेच तरी शिक्षेची भीती नसते. याचा गैरफायदा माध्यम संस्था घेतात. <br>
+		            <br>
+		          </p>
+				</div>
+		    </li>
+			
+			
+			
+			<li class="acc-header2" id="sensa"> 
+		        <a href="#sensa">(Sensationalism) सेंसेशनालिझम</a>
+		        <div class="acc-content"><p><strong>सेंसेशनालिझम – संवेदनता</strong> <br>
+		          बातम्यांच्या मांडणीत वाचकांच्या संवेदनांना उत्तेजन देऊन आपल्याकडे आकर्षित करण्याच्या पद्धतीला संवेदनता म्हणतात. बातम्यांच्या मांडणीत संवेदनता असणे नवीन नाही. किंबहुना एखाद्या घटनेची बातमी होणे यासाठी संवेदनतेला वाव असणे ही एक गरज आहे. याचे दुसरे टोक म्हणजे एखाद्या बातमीला जाणून बुजून निस्तेज बनवणे (Dumbing Down). माध्यमांचा प्रसार आणि सार्वत्रिकीकरण जसेजसे वाढत गेले तसतसे बातम्यांच्या मांडणीत संवेदनता वाढत गेली. यासाठी मोठी आणि ठळक अक्षरे, जोमदार भाषा, बातमी सांगण्यासाठी अतिशय सोपी भाषा आणि रोजच्या वापरातल्या शब्दांचा वापर, विनोद आणि रेखाचित्र आणि छायाचित्रांचा पुरेपूर वापर केला जातो. </p>
+		          <p>&nbsp;</p>
+		          <p>संवेदनता म्हणजे खोटेपणा किंवा सत्याचा विपर्यास नाही हे लक्षात घेतले पाहिजे. 
+		            कुठल्या बातमीच्या बाबतीत मांडणीत संवेदनता वापरावी आणि कुठे वापरू नये हे समजण्यासाठी वाचकांच्या प्रवृत्तीचे भान असावे लागते. भान सुटले तर वाचकांना आकर्षित करण्यासाठी वापरलेले तंत्र स्वत:वरच उलटण्याची भीती असते.<br>
+		            <br>
+		          </p>
+				</div>
+		    </li>
+			
+			
+			<li class="acc-header" id="tabloid"> 
+		        <a href="#tabloid">(Tabloid) टॅब्लॉइड</a>
+		        <div class="acc-content">
+		          <p><strong>		          टॅब्लॉइड</strong></p>
+		          <p>पत्रकारितेच्या प्रवासातील हा एक महत्त्वाचा टप्पा आहे. अगदी अलीकडे याप्रकारची पत्रकारिता करणार्या वर्तमानपत्रांना 'गटर प्रेस' असे म्हटले गेले. अशा वर्तमानपत्रांत सेक्स आणि सेलिब्रेटीचा भरणा असतो. सर्वात अगोदर मात्र हा वर्तमानपत्राच्या आकाराचा विषय होता. विशिष्ट लहान आकाराच्या वर्तमानपत्रांना टॅब्लॉइड ही संज्ञा वापरली जायची. </p>
+		          <p>&nbsp;</p>
+		          <p>अर्थात ही वर्तमानपत्रे उत्तेजक विषय हाताळायची आणि मांडणीही तशीच करायची.   सकाळची मुख्य वर्तमानपत्रे घरात पोहोचली की मग ही वर्तमानपत्रे यायची. पत्रकारितेच्या बदलत्या संदर्भांचे टॅब्लॉइड एक महत्त्वाचा टप्पा आहे. बातम्या जसजशा मनोरंजन क्षेत्रातील विषयांशी स्पर्धा करायला लागल्या तसतशा त्यांच्यात जे बदल होत गेले त्यांचाच परिणाम आपल्याला टॅब्लॉइड मधे दिसतो. त्यामुळे महत्त्वाचे सार्वजनिक विषय हाताळण्यासाठीचे व्यासपीठ म्हणून आणि लोकांच्या हितासाठी वर्तमानपत्रांचा वापर न होता लोकांना काय आवडेल ते सांगण्याकडे कल वाढला. </p>
+		          <p>&nbsp;</p>
+		          <p>अशाप्रकारच्या पत्रकारितेचे वैशिष्ट्य असे की यात एखाद्या विषयावर ऊर बडवणे, आरडाओरडा करणे, लोकभावना उत्तेजित करणे,  एखाद्या व्यक्ति किंवा समाजगटाची समस्या जणू अखिल मानव समाजाची समस्या आहे असा भास निर्माण करणे आणि या सगळ्याला 'ह्युमन इंट्रेस्ट' या नावाखाली खपवणे होते. हळू हळू मोठ्या आकाराच्या आणि टॅब्लॉइड आकाराच्या वर्तमानपत्रांतील विषय मांडणीतील फरक नाहिसा झाला. कालांतराने यांतील आकारातील फरकही कमी झाला.  </p>
+		          <p>&nbsp;</p>
+		          <p><strong>अधिक माहितीसाठी पाहा </strong></p>
+		          <p>Bromley, M, The Tabloiding of Britain, in Bromley. M and Stephenson, H, (eds), Sex, Lies and Democracy, Longman (1998) </p>
+		          <p>Curran, C, and Seaton, J., Power without responsibility, Routledge (1997)</p>
+		          <p><br>
+	              </p>
+				</div>
+		    </li>
+            
+            <li class="acc-header5" id="alpha"> 
+	        <a href="index.html">मुख्य पानावर परत</a>
+            </li>
+            
+		</ul>
+	</div>
+    
+  </body>
+</html>
